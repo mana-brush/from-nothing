@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Map
+  - Block
+  - Player
   - 
   - 
   - 
@@ -43,6 +43,15 @@ TagManager:
     locked: 0
   - name: Selection
     uniqueID: 1843841783
+    locked: 0
+  - name: Map
+    uniqueID: 1363004425
+    locked: 0
+  - name: Blocks
+    uniqueID: 2011531407
+    locked: 0
+  - name: Player
+    uniqueID: 3741305757
     locked: 0
   m_RenderingLayers:
   - Default
