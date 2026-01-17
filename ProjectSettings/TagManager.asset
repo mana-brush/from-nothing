@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - Map
+  - Barrier
   - Block
+  - Floor
   - Player
-  - 
   - 
   - 
   - 
@@ -46,6 +46,9 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 1363004425
+    locked: 0
+  - name: UI
+    uniqueID: 931161761
     locked: 0
   - name: Blocks
     uniqueID: 2011531407

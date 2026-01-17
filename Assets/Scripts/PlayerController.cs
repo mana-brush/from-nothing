@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private LayerMask barrier;
     [SerializeField] private float speed = 5f;
     [SerializeField] private Transform playerMovePoint;
     [SerializeField] private Transform playerDirection;
@@ -23,15 +24,20 @@ public class PlayerController : MonoBehaviour
         if (!Mathf.Approximately(Vector3.Distance(transform.position, playerMovePoint.position), 0f)) return;
         if (!_movement.inProgress) return;
         Vector2 direction = _movement.ReadValue<Vector2>();
+        
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
         {
-            playerMovePoint.position += new Vector3(Mathf.RoundToInt(direction.x), 0f, 0f);
-            playerDirection.position = transform.position + new Vector3(Mathf.RoundToInt(direction.x), 0f, 0f);
+            Vector3 xDirection = new Vector3(Mathf.RoundToInt(direction.x), 0f, 0f);
+            if (Physics2D.OverlapCircle(playerMovePoint.position + xDirection, .9f, barrier)) return;
+            playerMovePoint.position += xDirection;
+            playerDirection.position = transform.position + xDirection;
         }
         else
         {
-            playerMovePoint.position += new Vector3(0f, Mathf.RoundToInt(direction.y), 0f);
-            playerDirection.position = transform.position + new Vector3(0f, Mathf.RoundToInt(direction.y), 0f);
+            Vector3 yDirection = new Vector3(0f, Mathf.RoundToInt(direction.y), 0f);
+            if (Physics2D.OverlapCircle(playerMovePoint.position + yDirection, .9f, barrier)) return;
+            playerMovePoint.position += yDirection;
+            playerDirection.position = transform.position + yDirection;
         }
     }
 }
