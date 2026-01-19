@@ -1546,7 +1546,7 @@ GameObject:
   - component: {fileID: 708970149}
   - component: {fileID: 708970148}
   m_Layer: 0
-  m_Name: MovementText
+  m_Name: BannerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1568,8 +1568,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -157, y: -286}
-  m_SizeDelta: {x: 831.3585, y: 181.7739}
+  m_AnchoredPosition: {x: -157, y: -248.76965}
+  m_SizeDelta: {x: 831.3585, y: 226.3354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &708970148
 MonoBehaviour:
@@ -1626,7 +1626,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -2662,7 +2662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1050614900
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050614899}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -4546,6 +4546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1be2126e124c0b58b5ddb691caf664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Speaker
+  speech: 1
+  speechBanner: {fileID: 1050614899}
 --- !u!61 &1131089436
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4625,11 +4627,19 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 2058859495}
     m_Modifications:
+    - target: {fileID: 6133260166357388770, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
+      propertyPath: speech
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6133260166357388770, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
+      propertyPath: speechBanner
+      value: 
+      objectReference: {fileID: 1050614899}
     - target: {fileID: 6369879763675163131, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_Name
-      value: Speaker
+      value: TeleporterSpeaker
       objectReference: {fileID: 0}
     - target: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4649,15 +4659,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5202,6 +5212,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!4 &1513251272 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7406232346833280259, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
+  m_PrefabInstance: {fileID: 1179221131}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1584367673
 GameObject:
   m_ObjectHideFlags: 0
@@ -8003,6 +8018,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1be2126e124c0b58b5ddb691caf664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Speaker
+  speech: 2
+  speechBanner: {fileID: 1050614899}
 --- !u!50 &1721629203
 Rigidbody2D:
   serializedVersion: 5
@@ -8681,6 +8698,7 @@ Transform:
   - {fileID: 965352432}
   - {fileID: 1131089433}
   - {fileID: 1721629200}
+  - {fileID: 1513251272}
   - {fileID: 1050614900}
   - {fileID: 1452705225}
   m_Father: {fileID: 0}
@@ -8855,6 +8873,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2058859495}
     m_Modifications:
+    - target: {fileID: 6133260166357388770, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
+      propertyPath: speechBanner
+      value: 
+      objectReference: {fileID: 1050614899}
     - target: {fileID: 6369879763675163131, guid: 9f88fb58120e2608eb34ebf759c9bcb7, type: 3}
       propertyPath: m_Name
       value: Speaker
@@ -8991,4 +9013,3 @@ SceneRoots:
   - {fileID: 2058859495}
   - {fileID: 556099191}
   - {fileID: 98055738}
-  - {fileID: 1179221131}
