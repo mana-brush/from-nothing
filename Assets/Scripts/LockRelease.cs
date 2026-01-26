@@ -1,13 +1,12 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
 
 public class LockRelease : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private TilemapRenderer tilemapRenderer;
-
+    
     private void OnTriggerEnter2D(Collider2D other)
     {
         TriggerLockRelease(other.gameObject, false);

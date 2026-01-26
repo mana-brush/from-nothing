@@ -1,0 +1,4 @@
+repository "nanimokara/from-nothing@20066702055569@cloud"
+  path "/"
+    br "/main"
+    co "/main"

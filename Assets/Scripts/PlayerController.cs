@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerMovePoint;
     [SerializeField] private Transform playerDirection;
     [SerializeField] private SpriteRenderer playerSpriteRenderer;
-    [SerializeField] private LockRelease _lockRelease;
     private SpriteRenderer _targetSpriteRenderer;
     private InputAction _movement;
     private InputAction _swap;
@@ -57,7 +56,6 @@ public class PlayerController : MonoBehaviour
     private void SwapSprite(SpriteRenderer player, SpriteRenderer target)
     {
         (player.sprite, target.sprite) = (target.sprite, player.sprite);
-        _lockRelease.CheckLockRelease(target); // swapped so 0 -> 1, or 1 -> 0
     }
 
     public void SetTargeted(bool value, SpriteRenderer target)
